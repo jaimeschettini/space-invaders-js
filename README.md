@@ -1,4 +1,4 @@
 space-invaders-js
 =================
 
-ASpace Invaders replica made in javascript
+A game like Space Invaders made in javascript

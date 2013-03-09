@@ -29,7 +29,8 @@ body{
 	width: 32px;
 	height: 32px;
 	display: none;
-	background-position: 0 -547px;
+	/*background-position: 0 -547px;*/
+	background: white;
 	position: absolute;
 }
 

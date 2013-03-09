@@ -1,4 +1,4 @@
-var Invader = function(invader) {
+Invader = function(invader) {
 	var invader = $(['<div class="invader ', invader,'"></div>'].join('')).hide().appendTo(Space.universe);
 
 	function bindBulletFired(invader){
@@ -17,13 +17,12 @@ var Invader = function(invader) {
 		});
 	}
 	
-    function setInvaderPosition(){
-    	var left = Math.random() * (Space.getBoundaries().right - invader.width());
-		invader.css({left: left}).fadeIn('slow');
+    function goToPosition(position) {
+		invader.css({left: position});
     };
     
-    this.attack = function(){
-		setInvaderPosition();
+    this.attack = function() {
+		this.fadeIn('slow');
 		bindBulletFired(this);
     };
     

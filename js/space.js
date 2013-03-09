@@ -1,33 +1,41 @@
-var Space = {
-	universe: $(document.body),
+Space = function() {
+
+	var universe = $(document.body),
+		actionListeners = [];
 	
-	setSpaceship: function(spaceship){
-		var spaceship = new Spaceship(spaceship),
-			action = {
-				37: spaceship.moveLeft,
-				32: spaceship.fire,
-				38: spaceship.fire,
-				39: spaceship.moveRight
-			};
-		$(document).keydown(function(event){
-			(action[event.which] || function(){})();
-		});
-		return this;
-	},
-	
-	addInvaders: function(invaders){
-		invaders = invaders || [];
-		for (var i = 0; i < invaders.length; i++) {
-			var invader = new Invader(invaders[i]).attack();
-		}
-	},
-	
-	getBoundaries: function(){
-		return {
-			left: 0,
-			right: Space.universe.width()
-		};
+	this.add = function(element) {
+		return element.appendTo(universe);
+	};
+
+	this.addActionListener = function(listener) {
+		actionListeners.push(listener);
 	}
 
+	this.bindActionListener = function(specs) {
+		$(document).keydown(function(event) {
+			for (var i = 0; i < actionListeners.length; i++) {
+			 	actionListeners[i].actionPerformed(event.which);
+			 }
+		});
+		return this;
+	};
 	
+	this.addInvader = function(invaders) {
+		
+	};
+
+	this.boundaries = function() {
+		return {
+			left: 0,
+			right: universe.width()
+		};
+	};
+	
+	this.animate = function() {
+		new BackgroundAnimator().animate();
+	};
+
+	this.bindActionListener();
+	this.animate();
+
 };

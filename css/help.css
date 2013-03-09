@@ -1,0 +1,53 @@
+#help{
+	background: url("./img/space-invaders-sprite.png") no-repeat top left;
+}
+
+#help{
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	top: 0;
+	background-position: 0 -478px;
+	top: 50%;
+	right: 10px;
+	cursor: pointer;
+}
+
+#help div{
+	display: none;
+}
+
+#info h1, #info h3, #info .play{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100%;
+  text-shadow: none;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0em;
+  word-spacing: 0em;
+  line-height: 1.2;
+}
+
+#info h1{
+	font-size: 200%;
+	text-align: center;
+}
+
+#info h3{
+	font-size: 120%;
+	font-weight: normal;
+}
+
+#info div ol li {
+	line-height: 30px;
+}
+
+#info p{
+	text-align: center;
+}
+
+#info .play{
+	font-size: 120%;
+	cursor: pointer;
+}
